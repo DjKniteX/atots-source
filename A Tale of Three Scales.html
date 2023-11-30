@@ -98,10 +98,16 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="A Tale of Three Scales" startnode="30" creator="Twine" creator-version="2.7.1" format="SugarCube" format-version="2.36.1" ifid="30746236-11FA-4A54-84EB-984CC6F24EE8" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Study" tags="" position="1500,600" size="100,100">&lt;&lt;set $hasScale to false&gt;&gt;
+	<tw-storydata name="A Tale of Three Scales" startnode="1" creator="Twine" creator-version="2.7.1" format="SugarCube" format-version="2.36.1" ifid="30746236-11FA-4A54-84EB-984CC6F24EE8" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Study" tags="" position="1500,600" size="100,100">&lt;&lt;set $hasScale to false&gt;&gt;
 &lt;&lt;set $hasTools to true&gt;&gt;
 &lt;&lt;set $playerHP to 100&gt;&gt;
 &lt;&lt;set $shipFuel to 100&gt;&gt;
+
+&lt;&lt;cacheaudio &quot;mainsong&quot; &quot;assets/mainsong.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;cave&quot; &quot;assets/cave.mp3&quot;&gt;&gt;
+
+
+&lt;&lt;audio mainsong play&gt;&gt;
 
 You just returned home from a long day of working out in the fields of a farm that you are trying to build. Your quiet home far away from home isn&#39;t what you imagined. But you love the tranqulity and quiet on this side of the Universe. 
 
@@ -212,7 +218,7 @@ Your ship refuels from gathering the natural resources nearby, a technology that
 You take out your Saber and approach the entrance of the cave.
 
 Go [[Inside the Cave]]
-Return [[ Home ]]</tw-passagedata><tw-passagedata pid="11" name="Fly around Space" tags="" position="2600,600" size="100,100">&lt;&lt;set $shipFuel to $shipFuel - 10&gt;&gt;
+Return to [[Home]] </tw-passagedata><tw-passagedata pid="11" name="Fly around Space" tags="" position="2600,600" size="100,100">&lt;&lt;set $shipFuel to $shipFuel - 10&gt;&gt;
 
 Flying around the vast dark universe, you notice planets out in the distance surrounded by many different stars. You can&#39;t help shake the feeling that something is watching you.
 
@@ -230,11 +236,12 @@ Fly to [[Coordinates]]
 
 
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="12" name="Inside the Cave" tags="" position="2500,1000" size="100,100">
+</tw-passagedata><tw-passagedata pid="12" name="Inside the Cave" tags="" position="2500,1000" size="100,100">&lt;&lt;audio mainsong stop&gt;&gt;
+&lt;&lt;audio cave play&gt;&gt;
 
 The cave is dark but your helmet luminates the darkness. It&#39;s cold but that doesn&#39;t phase you as you trekked places like these before.
 
-[[Continue through the caves |Cave Chamber]]</tw-passagedata><tw-passagedata pid="13" name=" Home " tags="" position="2700,800" size="100,100">You returned home but feeling dissatisfied. You decide to take a break and hope to return in a future time.
+[[Continue through the caves |Cave Chamber]]</tw-passagedata><tw-passagedata pid="13" name="Home" tags="" position="2700,800" size="100,100">You returned home but feeling dissatisfied. You decide to take a break and hope to return in a future time.
 
 [[Restart Game |Study]]</tw-passagedata><tw-passagedata pid="14" name="Cave Chamber" tags="" position="2500,1125" size="100,100">
 
@@ -280,7 +287,7 @@ Enter [[Chamber Room]]</tw-passagedata><tw-passagedata pid="22" name="Chamber Ro
 
 You see another large room ahead of you.
 
-[[Continue through the caves | Big Cave Room 1]]
+[[Continue through the caves |Big Cave Room 1]]
 </tw-passagedata><tw-passagedata pid="23" name="Caves" tags="" position="2700,1375" size="100,100">The corridor is getting more narrow but that doesn&#39;t scare you.  You continue to press.
 
 [[Continue through the Caves |Caves 1]]</tw-passagedata><tw-passagedata pid="24" name="Caves 1" tags="" position="2700,1500" size="100,100">[[Continue through the Caves |Caves 2]]</tw-passagedata><tw-passagedata pid="25" name="Caves 2" tags="" position="2700,1625" size="100,100">You checked your air tank and you are about half way through. You are sure you have enough tank to get through this.
@@ -292,13 +299,13 @@ You see another large room ahead of you.
 [[Try to slip through the tight corridor |Corridor]]
 [[Make your way back to the entrance and fill the tank |Inside the Cave]]</tw-passagedata><tw-passagedata pid="27" name="Corridor" tags="" position="2700,1875" size="100,100">There&#39;s no room for you to wiggle through but you can&#39;t help see another opening you can possibly squeeze through. You check your Oxygen level is and getting lower by the minute. You are certain there might be an airhole near by for you to recharge your levels.
 
-[[Squeeze through the opener|Tight Space]]</tw-passagedata><tw-passagedata pid="28" name=" Big Cave Room 1" tags="" position="2200,2025" size="100,100">The rooms are just getting bigger and the snoring is getting much louder. You are being careful not to make too much noise.
+[[Squeeze through the opener|Tight Space]]</tw-passagedata><tw-passagedata pid="28" name="Big Cave Room 1" tags="" position="2375,2050" size="100,100">The rooms are just getting bigger and the snoring is getting much louder. You are being careful not to make too much noise.
 
 You place your hand on your blade, incase something pops out and you are ready to defend yourself.
 
 
-[[Continue through the caves | Big Cave Room 2]]
-</tw-passagedata><tw-passagedata pid="29" name=" Big Cave Room 2" tags="" position="2200,2150" size="100,100">You are slowly creeping through a large room. At the very end you see a tight opening.
+[[Continue through the caves |Big Cave Room 2]]
+</tw-passagedata><tw-passagedata pid="29" name="Big Cave Room 2" tags="" position="2200,2150" size="100,100">You are slowly creeping through a large room. At the very end you see a tight opening.
 
 Just a little bit biger for you to get through.
 
@@ -309,8 +316,9 @@ You try to peek through but your light can barely show anything visible on the o
 
 The snoring is nearby.
 
-[[Attempt to crawl through the tight opening | Boss Room]]</tw-passagedata><tw-passagedata pid="30" name=" Boss Room" tags="" position="2200,2275" size="100,100">&lt;&lt;set $playerHP to 100&gt;&gt;
+[[Attempt to crawl through the tight opening |Boss Room]]</tw-passagedata><tw-passagedata pid="30" name="Boss Room" tags="" position="2200,2275" size="100,100">&lt;&lt;set $playerHP to 100&gt;&gt;
 &lt;&lt;set $monsterHP to 100&gt;&gt;
+
 
 As you attempt to squeeze through the opening. You noticed how silent the room was. A shuffle was heard in the background which then echoes back to you. You feel something behind you.
 
@@ -328,13 +336,16 @@ You drew your blade.
 [[Attack the monster |Battle]]
 </tw-passagedata><tw-passagedata pid="31" name="Tight Space" tags="" position="2700,2000" size="100,100">You lose oxygen. You begin to suffocate. You are unable to get the emergency oxygen from your belt and you slowly dropping down.  With little to no room for you to relax your body, you are stuck in an uncomfortable position. Darkness is all that&#39;s left.
 
-[[Restart Game |Study]]</tw-passagedata><tw-passagedata pid="32" name=" Ending 1" tags="" position="2400,2400" size="100,100">After a lengthy battle, you are able to breathe again. You are back at home after a short trip.
+[[Restart Game |Study]]</tw-passagedata><tw-passagedata pid="32" name="Ending 1" tags="" position="2400,2400" size="100,100">&lt;&lt;audio cave stop&gt;&gt;
+&lt;&lt;audio mainsong play&gt;&gt;
+
+After a lengthy battle, you are able to breathe again. You are back at home after a short trip.
 
 You are still nervous. Body is shaking. You haven&#39;t fought like this in awhile. But you&#39;re happy. Contempt. 
 
 You finally got the strength to walk to your workshop.
 
-[[Gather all the scales together | Ending 2]]</tw-passagedata><tw-passagedata pid="33" name=" Ending 2" tags="" position="2600,2400" size="100,100">You opened a book that you had nearby. You see the ingredients that it needed. This was a recipe that was passed down by a Canine Explorer from a planet they have called Earth. 
+[[Gather all the scales together |Ending 2]]</tw-passagedata><tw-passagedata pid="33" name="Ending 2" tags="" position="2600,2400" size="100,100">You opened a book that you had nearby. You see the ingredients that it needed. This was a recipe that was passed down by a Canine Explorer from a planet they have called Earth. 
 
 Story goes that this dish was popular among humans and that his race would often try to sneak it away from their owners to eat.
 
@@ -349,14 +360,14 @@ After just 20 minutes, the circular dish is finished and to your astonishment, i
 But thoughts of eating is flowing through your head right now. The scales were tough to get so this might be the only chance to enjoy this. You looked around and you see a capsule pod where you can hold the delicacy for next time and a plate where you can start chowing down.
 
 
-[[Place the circular delicacy into a capsule pod | Ending 3a]]
-[[Eat the best dish you have ever made | Ending 3b]]</tw-passagedata><tw-passagedata pid="34" name=" Ending 3a" tags="" position="2600,2525" size="100,100">You placed the dish inside the capsule pod for safe keeping. You then begin to write a letter addressing it to your young nephew that you haven&#39;t seen since he was born. A young explorer just like you, you then sent the message via universal telecommunications hoping it would reach him soon for you both to enjoy this excellent delicacy.
+[[Place the circular delicacy into a capsule pod |Ending 3a]]
+[[Eat the best dish you have ever made |Ending 3b]]</tw-passagedata><tw-passagedata pid="34" name="Ending 3a" tags="" position="2600,2525" size="100,100">You placed the dish inside the capsule pod for safe keeping. You then begin to write a letter addressing it to your young nephew that you haven&#39;t seen since he was born. A young explorer just like you, you then sent the message via universal telecommunications hoping it would reach him soon for you both to enjoy this excellent delicacy.
 
 Unfortunately, the Universe is so vast that it could take days, weeks, or even months for it to reach your nephew.
 
 But you are happy. You walked back to your study wondering what you should do again  as you wait for your nephew&#39;s reply.
 
-[[Play again |Study]]</tw-passagedata><tw-passagedata pid="35" name=" Ending 3b" tags="" position="2725,2525" size="100,100">You took the plate but you realized it might be easier to just eat it from the dish itself. You can&#39;t help but smell how delicious this smell. The scales are doing amazing work. 
+[[Play again |Study]]</tw-passagedata><tw-passagedata pid="35" name="Ending 3b" tags="" position="2725,2525" size="100,100">You took the plate but you realized it might be easier to just eat it from the dish itself. You can&#39;t help but smell how delicious this smell. The scales are doing amazing work. 
 
 Many explorers and chefs would laugh when you would tell them about your plan. But you did it and they&#39;re not here to enjoy it.
 
@@ -396,7 +407,7 @@ The large creature lets out a dying moan before collapsing onto the large but ti
 
 You finally brought down the Monster. You stripped the body for a few scales and can&#39;t help but feel overjoyed that you finally completed your quest for the three scales.
 
-[[Make your way back to the ship || Ending 1]]
+[[Make your way back to the ship |Ending 1]]
 &lt;&lt;elseif $playerHP lte 0&gt;&gt;
 
 The monster takes their last finishing blow, ripping your body to shreds. Your eyes are focused on the last moments of your life as you stare into the large terror that is getting ready to devour your body.
